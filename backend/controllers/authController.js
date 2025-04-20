@@ -83,9 +83,19 @@ const loginUser = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+// Get user profile
+const getUserProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password');
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' });
+  }
+};
 
-// ✅ Export both controllers
+// Export both controllers
 module.exports = {
   registerUser,
-  loginUser
+  loginUser,
+  getUserProfile
 };
