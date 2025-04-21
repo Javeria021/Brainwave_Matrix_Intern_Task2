@@ -1,0 +1,55 @@
+.create-post-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  .create-post-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .create-post-form input,
+  .create-post-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Segoe UI', sans-serif;
+    transition: 0.3s ease;
+  }
+  
+  .create-post-form input:focus,
+  .create-post-form textarea:focus {
+    border-color: #0077ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 119, 255, 0.2);
+  }
+  
+  .create-post-form textarea {
+    resize: vertical;
+    height: 150px;
+  }
+  
+  .create-post-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0077ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-post-form button:hover {
+    background-color: #005fcc;
+  }
+  

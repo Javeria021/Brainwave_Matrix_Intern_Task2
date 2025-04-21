@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles/CreatePost.css';
+import './Styles/CreatePost.css';
 
 const CreatePost = () => {
   const [formData, setFormData] = useState({

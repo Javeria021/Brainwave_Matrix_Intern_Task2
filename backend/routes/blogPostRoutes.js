@@ -9,8 +9,8 @@ const {
 } = require("../controllers/blogPostController");
 const protect = require("../middleware/authMiddleware");
 
-// Create a blog post
-router.post("/create", createPost);
+// Create a blog post (with authentication)
+router.post("/create", protect, createPost);
 
 // Get all blog posts
 router.get("/", getAllPosts);
@@ -19,11 +19,9 @@ router.get("/", getAllPosts);
 router.get("/:id", getPostById);
 
 // Update a blog post
-router.put("/:id", updatePost);
+router.put("/:id", protect, updatePost);
 
 // Delete a blog post
-router.delete("/:id", deletePost);
-
-router.post("/create", protect, createPost);
+router.delete("/:id", protect, deletePost);
 
 module.exports = router;

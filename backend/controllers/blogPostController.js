@@ -20,27 +20,21 @@ exports.createPost = async (req, res) => {
 //  Get All Blog Posts
 exports.getAllPosts = async (req, res) => {
   try {
-    const posts = await BlogPost.find().populate("author", "name email");
+    const posts = await BlogPost.find().sort({ createdAt: -1 });
     res.status(200).json(posts);
   } catch (error) {
-    console.error("Error fetching blog posts:", error);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: 'Failed to fetch posts' });
   }
 };
 
 //  Get Single Blog Post by ID
 exports.getPostById = async (req, res) => {
   try {
-    const post = await BlogPost.findById(req.params.id).populate("author", "name email");
-
-    if (!post) {
-      return res.status(404).json({ message: "Post not found" });
-    }
-
+    const post = await BlogPost.findById(req.params.id);
+    if (!post) return res.status(404).json({ message: 'Post not found' });
     res.status(200).json(post);
   } catch (error) {
-    console.error("Error fetching post:", error);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: 'Error fetching the post' });
   }
 };
 

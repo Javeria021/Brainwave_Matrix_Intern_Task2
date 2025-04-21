@@ -1,0 +1,36 @@
+.blog-list {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .blog-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .blog-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+  
+  .blog-card h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+  
+  .blog-card .author {
+    color: #555;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
