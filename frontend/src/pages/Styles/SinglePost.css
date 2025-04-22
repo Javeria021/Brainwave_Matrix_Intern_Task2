@@ -1,37 +1,45 @@
-.single-post-container {
-  width: 80%;
-  margin: 2rem auto;
-  background: #fdfdfd;
-  padding: 2rem;
+.single-post {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.author {
-  font-style: italic;
-  color: #666;
-  margin-bottom: 1rem;
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-.post-actions {
-  margin-top: 1.5rem;
+.edit-form button {
+  margin-right: 10px;
+  padding: 8px 18px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.edit-btn,
-.delete-btn {
+.post-buttons button {
   margin-right: 10px;
   padding: 8px 16px;
   border: none;
   color: white;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 4px;
-  text-decoration: none;
 }
 
-.edit-btn {
-  background-color: #2196f3;
+.post-buttons button:first-child {
+  background-color: #007bff;
 }
 
-.delete-btn {
-  background-color: #f44336;
+.post-buttons button:last-child {
+  background-color: #dc3545;
 }
