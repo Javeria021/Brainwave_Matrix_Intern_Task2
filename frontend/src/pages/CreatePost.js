@@ -15,21 +15,34 @@ const CreatePost = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      alert("You must be logged in to create a blog post.");
+      return;
+    }
+
     try {
       const res = await fetch('http://localhost:5000/api/blogs/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
         },
         body: JSON.stringify(formData)
       });
 
       const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || 'Failed to create post');
+      }
+
       alert(data.message || 'Blog post created!');
       setFormData({ title: '', content: '', author: '' });
     } catch (error) {
       console.error('Error creating post:', error);
-      alert('Something went wrong!');
+      alert(error.message || 'Something went wrong!');
     }
   };
 

@@ -23,10 +23,10 @@ const Register = () => {
       const res = await axios.post('http://localhost:5000/api/auth/register', formData);
       localStorage.setItem('token', res.data.token); // Store token
       alert('Registration Successful!');
-      navigate('/'); // Redirect to homepage
+      navigate('/'); // Redirect to blog post creation
     } catch (err) {
       alert(err.response?.data?.message || 'Error registering');
-      console.error(err.response || err);
+      console.error(err);
     }
   };
 
@@ -34,9 +34,9 @@ const Register = () => {
     <div className="auth-container">
       <h2>Register</h2>
       <form onSubmit={handleSubmit} className="auth-form">
-        <input type="text" name="name" placeholder="Name" onChange={handleChange} />
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} />
+        <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
+        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
         <button type="submit">Register</button>
       </form>
     </div>

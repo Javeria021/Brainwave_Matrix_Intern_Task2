@@ -80,4 +80,41 @@
     font-size: 1.2rem;
     color: #333;
   }
+
+  .blog-list-section {
+    margin: 50px auto;
+    max-width: 900px;
+    padding: 20px;
+  }
+  
+  .blog-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .blog-card p {
+    color: #666;
+  }
+  
+  .blog-card .author {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 10px;
+  }
+  
+  .blog-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
   

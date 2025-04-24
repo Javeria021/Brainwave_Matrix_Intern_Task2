@@ -1,8 +1,12 @@
 .auth-container {
+    height: 85vh;
+    background-image: url('https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    justify-content: center;
   }
   
   .auth-form {
@@ -10,6 +14,12 @@
     flex-direction: column;
     width: 300px;
     gap: 10px;
+  }
+
+  .auth-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
   }
   
   .auth-form input {

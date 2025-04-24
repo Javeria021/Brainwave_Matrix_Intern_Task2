@@ -7,6 +7,7 @@ import CreatePostPage from './pages/CreatePost';
 import BlogList from './pages/BlogList';
 import SinglePost from './pages/SinglePost';
 import Header from './components/Header';
+import EditPost from './pages/EditPost';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/create-post" element={<CreatePostPage />} />
         <Route path="/blogs" element={<BlogList />} />
         <Route path="/posts/:id" element={<SinglePost />} />
+        <Route path="/edit/:id" element={<EditPost />} />
       </Routes>
     </Router>
   );
