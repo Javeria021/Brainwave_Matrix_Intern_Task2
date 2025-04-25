@@ -7,7 +7,16 @@ const EditPost = () => {
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+
   const user = JSON.parse(localStorage.getItem("user"));
+
+  // 🔒 Redirect if not logged in
+  useEffect(() => {
+    if (!user || !user.token) {
+      alert("You must be logged in to edit a post.");
+      return navigate("/login");
+    }
+  }, [user, navigate]);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -34,9 +43,10 @@ const EditPost = () => {
           },
         }
       );
-      navigate(`/post/${id}`); // 🟢 Redirect to single post after update
+      navigate(`/posts/${id}`, { state: { updated: true } });
     } catch (err) {
       console.log("Update error:", err);
+      alert("Update failed. Make sure you are authorized.");
     }
   };
 

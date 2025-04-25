@@ -15,9 +15,16 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:5000/api/auth/login', formData);
-      localStorage.setItem('token', res.data.token); // Store token
+      
+      // ✅ Save both token and username in localStorage
+      localStorage.setItem('user', JSON.stringify({
+        token: res.data.token,
+        username: res.data.user.name, // <-- use "name" instead of "username"
+      }));
+      
+
       alert('Login Successful!');
-      navigate('/'); // Redirect to homepage
+      navigate('/');
     } catch (err) {
       alert('Invalid credentials');
       console.error(err);
@@ -28,8 +35,20 @@ const Login = () => {
     <div className="auth-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit} className="auth-form">
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+          required
+        />
         <button type="submit">Login</button>
       </form>
     </div>

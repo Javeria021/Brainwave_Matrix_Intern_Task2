@@ -11,7 +11,7 @@ const createPost = async (req, res) => {
     const newPost = new BlogPost({
       title,
       content,
-      author,
+      author: req.user.username, 
       user: req.user._id,
     });
 
