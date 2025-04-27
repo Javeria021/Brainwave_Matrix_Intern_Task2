@@ -1,6 +1,6 @@
 .main-header {
-    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
-    padding: 20px;
+    background: linear-gradient(90deg, #435ee6, #fad0c4);
+    padding: 10px;
     text-align: center;
     position: relative;
   }
@@ -33,5 +33,21 @@
   .nav-btn:hover {
     background-color: #ff4e50;
     color: white;
+  }
+  
+  .account-container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .account-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .account-icon:hover {
+    transform: scale(1.1);
   }
   

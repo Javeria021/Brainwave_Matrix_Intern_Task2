@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import '../pages/Styles/EditPost.css';
 
 const EditPost = () => {
   const { id } = useParams();
